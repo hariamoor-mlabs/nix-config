@@ -14,17 +14,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2643e173-7755-4e4e-9983-5de5ee5f45b0";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8F55-49D8";
+    { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/e5f6a332-d264-40ee-a936-946d3e4103f1"; }
+    [ { device = "/dev/disk/by-label/swap"; }
     ];
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
