@@ -13,11 +13,10 @@
       address = [ "10.2.0.2/32" ];
       dns = [ "10.2.0.1" ];
       privateKeyFile = "/etc/privkeys/wireguard.txt";
- 
       peers = [
-        { publicKey = "kiVlibDLh5yZQOJ6Gaw1MB9wt4YHmKpfXZrAc0No9Gc=";
+        { publicKey = "nG4IB7yIBmezw4rcpX3SK9UyjjuKjIZZhssCD26jlhM=";
 	  allowedIPs = [ "0.0.0.0/0" ];
-	  endpoint = "69.10.63.242:51820"; 
+	  endpoint = "37.120.244.58:51820"; 
 	}
       ];
     };
@@ -27,15 +26,10 @@
     binaryCaches = [
       "https://hydra.iohk.io/"
       "https://iohk.cachix.org/"
-      "https://mlabs.cachix.org/"
     ];
-    binaryCachePublicKeys =
-    let
-      mlabs-cachix = "/etc/privkeys/mlabs-cachix.txt";
-    in [
+    binaryCachePublicKeys = [
       "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
       "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
-      "mlabs.cachix.org-1:${builtins.readFile mlabs-cachix}"
     ];
     trustedUsers = [ "hariamoor" ];
     extraOptions = "experimental-features = nix-command";
@@ -107,7 +101,6 @@
       curl
       feh
       imagemagick
-      cachix
     ];
   };
  
@@ -123,6 +116,5 @@
       allowReboot = true;
       channel = "https://nixos.org/channels/nixos-unstable-small";
     };
-    stateVersion = "22.11";
   };
 }

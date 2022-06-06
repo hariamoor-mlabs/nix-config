@@ -4,7 +4,6 @@
   nixpkgs.config.allowUnfree = true;
 
   home = {
-    stateVersion = "22.05";
     username = "hariamoor";
     homeDirectory = "/home/hariamoor";
     packages = with pkgs; [
