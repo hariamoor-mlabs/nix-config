@@ -85,12 +85,21 @@
  
   virtualisation.docker.enable = true;
  
-  users.users.hariamoor = {
-    home = "/home/hariamoor";
-    description = "Main user account";
-    extraGroups = [ "docker" "wheel" "networkmanager" ];
-    isNormalUser = true;
-    shell = pkgs.fish;
+  users = {
+    users.hariamoor = {
+      home = "/home/hariamoor";
+      description = "Main user account";
+      extraGroups = [ "docker" "wheel" "networkmanager" ];
+      isNormalUser = true;
+      shell = pkgs.fish;
+      createHome = true;
+      hashedPassword = "";
+      initialPassword = "";
+      openssh.authorizedKeys.keys = [
+        "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAINJqaAIe0Px9/2Hefc8PB/uAEwve5bx054tj28at99+pAAAAE3NzaDpoYXJpQG1sYWJzLmNpdHk= hariamoor@nixos"
+      ];
+    };
+    mutableUsers = false;
   };
  
   environment = {
