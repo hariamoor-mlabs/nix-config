@@ -9,6 +9,7 @@
     chromium = {
       package = pkgs.ungoogled-chromium;
       enable = true;
+      extensions = [ "aghfnjkcakhmadgdomlmlhhaocbkloab" ];
     };
   
     git = {
