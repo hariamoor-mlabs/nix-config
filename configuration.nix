@@ -65,7 +65,7 @@
       enable = true;
       windowManager.xmonad = {
         enable = true;
-	config = builtins.readFile "/etc/nixos/xmonad/xmonad.hs";
+	config = builtins.readFile ./xmonad/xmonad.hs;
 	extraPackages = hp: [
 	  hp.xmonad-contrib
 	  hp.monad-logger

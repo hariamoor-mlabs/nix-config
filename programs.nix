@@ -160,7 +160,7 @@
   
     xmobar = {
       enable = true;
-      extraConfig = builtins.readFile "/etc/nixos/xmonad/xmobar.conf";
+      extraConfig = builtins.readFile ./xmonad/xmobar.conf;
     };
   };
 }
