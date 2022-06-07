@@ -32,10 +32,12 @@
       "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
     ];
     trustedUsers = [ "hariamoor" ];
-    extraOptions = "experimental-features = nix-command";
     package = pkgs.nixUnstable;
     maxJobs = "auto";
     autoOptimiseStore = true;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
   };
  
   nixpkgs.config.allowUnfree = true;
@@ -113,16 +115,6 @@
     ];
   };
   
-  programs.chromium = {
-    package = pkgs.ungoogled-chromium;
-    enable = true;
-    extensions = [ "aghfnjkcakhmadgdomlmlhhaocbkloab" ];
-    homepageLocation = "https://youtube.com";
-    defaultSearchProviderEnabled = true;
-    defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
-    defaultSearchProviderSuggestURL = "https://duckduckgo.com/ac/?q={searchTerms}&type=list";
-  };
- 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

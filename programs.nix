@@ -6,6 +6,11 @@
   };
 
   programs = {
+    chromium = {
+      package = pkgs.ungoogled-chromium;
+      enable = true;
+    };
+
     git = {
       enable = true;
       userName = "hariamoor-mlabs";
