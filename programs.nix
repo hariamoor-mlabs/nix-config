@@ -2,13 +2,19 @@
 {
   nixpkgs.config = {
     allowUnfree = true;
-    chromium.enableWideVine = true;
+    # chromium = {
+      # enableAdobeFlash = true;
+      # enableWideVine = true;
+    # };
   };
 
   programs = {
     chromium = {
-      package = pkgs.ungoogled-chromium;
+      # package = pkgs.ungoogled-chromium;
       enable = true;
+      extensions = [
+        { id = "aghfnjkcakhmadgdomlmlhhaocbkloab"; }
+      ];
     };
 
     git = {
