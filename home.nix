@@ -9,6 +9,7 @@
     packages = with pkgs; [
       bitwarden
       bitwarden-cli
+      cachix
       cargo
       dmenu
       element-desktop
