@@ -102,7 +102,7 @@
     enable = true;
     extensions = [ "aghfnjkcakhmadgdomlmlhhaocbkloab" ];
     homepageLocation = "https://youtube.com";
-    defaultSearchEngineProviderEnabled = true;
+    defaultSearchProviderEnabled = true;
     defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
     defaultSearchProviderSuggestURL = "https://duckduckgo.com/ac/?q={searchTerms}&type=list";
   };
