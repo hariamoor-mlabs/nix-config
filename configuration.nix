@@ -96,6 +96,16 @@
       imagemagick
     ];
   };
+  
+  programs.chromium = {
+    package = pkgs.ungoogled-chromium;
+    enable = true;
+    extensions = [ "aghfnjkcakhmadgdomlmlhhaocbkloab" ];
+    homepageLocation = "https://youtube.com";
+    defaultSearchEngineProviderEnabled = true;
+    defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
+    defaultSearchProviderSuggestURL = "https://duckduckgo.com/ac/?q={searchTerms}&type=list";
+  };
  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
