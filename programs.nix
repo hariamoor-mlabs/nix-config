@@ -13,8 +13,7 @@
       # package = pkgs.ungoogled-chromium;
       enable = true;
       extensions = [
-        { id = "aghfnjkcakhmadgdomlmlhhaocbkloab"; /*Just Black theme*/ }
-	{ id = "lpfcbjknijpeeillifnkikgncikgfhdo"; /*Nami wallet*/}
+        { id = "aghfnjkcakhmadgdomlmlhhaocbkloab"; }
       ];
     };
 
