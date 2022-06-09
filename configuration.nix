@@ -64,6 +64,7 @@
  
   services = {
     ratbagd.enable = true;
+    geoclue2.enable = true;
     trezord.enable = true;
     xserver = {
       enable = true;
