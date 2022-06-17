@@ -62,6 +62,7 @@
  
   services = {
     geoclue2.enable = true;
+    ratbagd.enable = true;
     xserver = {
       enable = true;
       windowManager.xmonad = {

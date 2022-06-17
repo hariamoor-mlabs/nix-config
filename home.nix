@@ -72,7 +72,6 @@
 
   services = {
     lorri.enable = true;
-    ratbagd.enable = true;
     trezord.enable = true;
     redshift = {
       enable = true;
