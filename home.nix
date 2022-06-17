@@ -70,15 +70,5 @@
     };
   };
 
-  services = {
-    lorri.enable = true;
-    trezord.enable = true;
-    redshift = {
-      enable = true;
-      temperature = {
-        day = 2500;
-        night = 1000;
-      };
-    };
-  };
+  services.lorri.enable = true;
 } 

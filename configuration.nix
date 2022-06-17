@@ -63,6 +63,14 @@
   services = {
     geoclue2.enable = true;
     ratbagd.enable = true;
+    trezord.enable = true;
+    redshift = {
+      enable = true;
+      temperature = {
+        day = 2500;
+        night = 1000;
+      };
+    };
     xserver = {
       enable = true;
       windowManager.xmonad = {
