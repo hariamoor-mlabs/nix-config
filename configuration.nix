@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, fenix, ... }: {
   boot.loader.systemd-boot.enable = true;
 
   fonts = {
@@ -40,7 +40,10 @@
     '';
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ fenix.overlay ];
+  };
  
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -108,6 +111,13 @@
       nftables
       curl
       feh
+      (fenix.complete.withComponents [
+        "cargo"
+	"clippy"
+	"rustc"
+	"rustfmt"
+	"rust-src"
+      ])
       imagemagick
     ];
   };

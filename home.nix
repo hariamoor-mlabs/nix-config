@@ -1,10 +1,9 @@
-{ config, pkgs, fenix, ... }: {
+{ config, pkgs, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
     chromium = {
       enableWideVine = true;
     };
-    overlays = [ fenix.overlay ];
   };
 
   home = {
@@ -17,13 +16,6 @@
       direnv
       dmenu
       element-desktop
-      (fenix.complete.withComponents [
-        "cargo"
-	"clippy"
-	"rustc"
-	"rustfmt"
-	"rust-src"
-      ])
       flameshot
       gh
       helix
