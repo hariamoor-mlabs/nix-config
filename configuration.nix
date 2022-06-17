@@ -60,18 +60,21 @@
     onlykey.enable = true;
   };
  
-  services.xserver = {
-    enable = true;
-    windowManager.xmonad = {
+  services = {
+    geoclue2.enable = true;
+    xserver = {
       enable = true;
-      config = builtins.readFile ./xmonad/xmonad.hs;
-      extraPackages = hp: [
-	hp.xmonad-contrib
-	hp.monad-logger
-      ];
+      windowManager.xmonad = {
+        enable = true;
+        config = builtins.readFile ./xmonad/xmonad.hs;
+        extraPackages = hp: [
+	  hp.xmonad-contrib
+	  hp.monad-logger
+        ];
+      };
+      videoDrivers = [ "nvidia" ];
+      xkbOptions = "caps:escape";
     };
-    videoDrivers = [ "nvidia" ];
-    xkbOptions = "caps:escape";
   };
  
   virtualisation.docker.enable = true;

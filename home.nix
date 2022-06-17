@@ -73,7 +73,6 @@
   services = {
     lorri.enable = true;
     ratbagd.enable = true;
-    geoclue2.enable = true;
     trezord.enable = true;
     redshift = {
       enable = true;
