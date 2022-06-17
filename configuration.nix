@@ -40,9 +40,7 @@
     '';
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config.allowUnfree = true;
  
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -62,30 +60,18 @@
     onlykey.enable = true;
   };
  
-  services = {
-    ratbagd.enable = true;
-    geoclue2.enable = true;
-    trezord.enable = true;
-    xserver = {
+  services.xserver = {
+    enable = true;
+    windowManager.xmonad = {
       enable = true;
-      windowManager.xmonad = {
-        enable = true;
-	config = builtins.readFile ./xmonad/xmonad.hs;
-	extraPackages = hp: [
-	  hp.xmonad-contrib
-	  hp.monad-logger
-	];
-      };
-      videoDrivers = [ "nvidia" ];
-      xkbOptions = "caps:escape";
+      config = builtins.readFile ./xmonad/xmonad.hs;
+      extraPackages = hp: [
+	hp.xmonad-contrib
+	hp.monad-logger
+      ];
     };
-    redshift = {
-      enable = true;
-      temperature = {
-        day = 2500;
-        night = 1000;
-      };
-    };
+    videoDrivers = [ "nvidia" ];
+    xkbOptions = "caps:escape";
   };
  
   virtualisation.docker.enable = true;
@@ -107,7 +93,6 @@
   environment = {
     systemPackages = with pkgs; [
       alacritty
-      vimHugeX
       nftables
       curl
       feh
