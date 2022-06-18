@@ -1,7 +1,10 @@
-{config, pkgs, ... }: {
-  imports = [ ./programs.nix ];
-
-  nixpkgs.config.allowUnfree = true;
+{ config, pkgs, ... }: {
+  nixpkgs.config = {
+    allowUnfree = true;
+    chromium = {
+      enableWideVine = true;
+    };
+  };
 
   home = {
     username = "hariamoor";
@@ -11,18 +14,20 @@
       bitwarden-cli
       cachix
       cargo
+      clippy
+      direnv
       dmenu
       element-desktop
       flameshot
       gh
+      helix
       niv
       nix-prefetch-github
       onlykey
       onlykey-agent
       piper
-      ripgrep
       ripgrep-all
-      rnix-lsp
+      rust-analyzer
       rustc
       rustfmt
       slack
@@ -33,4 +38,33 @@
       zoom-us
     ];
   };
+
+  programs = {
+    chromium = {
+      enable = true;
+      extensions = [
+        "aghfnjkcakhmadgdomlmlhhaocbkloab"
+      ];
+    };
+
+    git = {
+      enable = true;
+      userName = "hariamoor-mlabs";
+      userEmail = "hari@mlabs.city";
+    };
+  
+    htop = {
+      enable = true;
+      package = pkgs.htop-vim;
+    };
+  
+    home-manager.enable = true;
+  
+    xmobar = {
+      enable = true;
+      extraConfig = builtins.readFile ./xmonad/xmobar.conf;
+    };
+  };
+
+  services.lorri.enable = true;
 } 
