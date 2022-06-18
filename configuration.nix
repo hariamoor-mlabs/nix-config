@@ -77,8 +77,8 @@
         enable = true;
         config = builtins.readFile ./xmonad/xmonad.hs;
         extraPackages = hp: [
-	  hp.xmonad-contrib
-	  hp.monad-logger
+	        hp.xmonad-contrib
+	        hp.monad-logger
         ];
       };
       videoDrivers = [ "nvidia" ];

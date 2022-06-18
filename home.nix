@@ -56,6 +56,11 @@
       enable = true;
       package = pkgs.htop-vim;
     };
+    
+    fish = {
+      enable = true;
+      shellInit = "set -gx EDITOR hx";
+    };
   
     home-manager.enable = true;
     
