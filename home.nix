@@ -36,9 +36,6 @@
       xclip
       zoom-us
     ];
-    sessionVariables = {
-      EDITOR = "hx";
-    };
   };
 
   programs = {
