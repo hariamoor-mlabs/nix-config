@@ -13,6 +13,8 @@
       bitwarden
       bitwarden-cli
       cachix
+      cargo
+      clippy
       direnv
       dmenu
       element-desktop
@@ -25,7 +27,9 @@
       onlykey-agent
       piper
       ripgrep-all
-      rust-analyzer-nightly
+      rust-analyzer
+      rustc
+      rustfmt
       slack
       trezor-suite
       trezor_agent
