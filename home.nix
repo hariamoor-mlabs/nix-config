@@ -20,7 +20,6 @@
       element-desktop
       flameshot
       gh
-      helix
       niv
       nix-prefetch-github
       onlykey
@@ -59,6 +58,22 @@
     };
   
     home-manager.enable = true;
+    
+    helix = {
+      enable = true;
+      settings = {
+        theme = "onedark";
+        editor = {
+          lsp.display-messages = true;
+          line-number = "relative";
+        };
+        keys = {
+          insert = {
+            j.k = "normal_mode";
+          };
+        };
+      };
+    };
   
     xmobar = {
       enable = true;
