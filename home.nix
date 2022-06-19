@@ -14,6 +14,7 @@
       bitwarden-cli
       cachix
       cargo
+      clang
       clippy
       direnv
       dmenu
@@ -21,6 +22,8 @@
       flameshot
       gh
       niv
+      helix
+      llvm
       nix-prefetch-github
       onlykey
       onlykey-agent
