@@ -13,22 +13,32 @@
 
   description = "Root Nix flake";
 
-  outputs = attrs@{ self, nixpkgs, home-manager, fenix }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        ./configuration.nix
-        ./hardware-configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.hariamoor = import ./home.nix;
-          };
-        }
-      ];
+  outputs = attrs@{ self, nixpkgs, home-manager, fenix }: 
+  let
+    DEFAULT_MODULES = [
+      ./configuration.nix
+      ./hardware-configuration.nix
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.hariamoor = import ./home.nix;
+        };
+      }
+    ];
+    system = "x86_64-linux";
+    specialArgs = attrs;
+  in {
+    nixosConfigurations = {
+      nixos = nixpkgs.lib.nixosSystem {
+        inherit system specialArgs;
+        modules = DEFAULT_MODULES ++ [ ./wireguard.nix ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        inherit system specialArgs;
+        modules = DEFAULT_MODULES;
+      };
     };
   };
 }
