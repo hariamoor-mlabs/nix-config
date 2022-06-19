@@ -1,9 +1,7 @@
 { config, pkgs, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
-    chromium = {
-      enableWideVine = true;
-    };
+    chromium = { enableWideVine = true; };
   };
 
   home = {
@@ -44,9 +42,7 @@
   programs = {
     chromium = {
       enable = true;
-      extensions = [
-        "aghfnjkcakhmadgdomlmlhhaocbkloab"
-      ];
+      extensions = [ "aghfnjkcakhmadgdomlmlhhaocbkloab" ];
     };
 
     git = {
@@ -54,23 +50,29 @@
       userName = "hariamoor-mlabs";
       userEmail = "hari@mlabs.city";
     };
-  
+
     htop = {
       enable = true;
       package = pkgs.htop-vim;
     };
-    
+
     fish = {
       enable = true;
       plugins = with pkgs; [
-        { name = "hydro"; src = fishPlugins.hydro.src; }
-        { name = "pisces"; src = fishPlugins.pisces.src; }
+        {
+          name = "hydro";
+          src = fishPlugins.hydro.src;
+        }
+        {
+          name = "pisces";
+          src = fishPlugins.pisces.src;
+        }
       ];
       shellInit = "set -gx EDITOR hx";
     };
-  
+
     home-manager.enable = true;
-    
+
     helix = {
       enable = true;
       settings = {
@@ -79,14 +81,10 @@
           lsp.display-messages = true;
           line-number = "relative";
         };
-        keys = {
-          insert = {
-            j.k = "normal_mode";
-          };
-        };
+        keys = { insert = { j.k = "normal_mode"; }; };
       };
     };
-  
+
     xmobar = {
       enable = true;
       extraConfig = builtins.readFile ./xmonad/xmobar.conf;
@@ -94,4 +92,4 @@
   };
 
   services.lorri.enable = true;
-} 
+}
