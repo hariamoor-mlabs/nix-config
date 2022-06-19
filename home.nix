@@ -62,6 +62,10 @@
     
     fish = {
       enable = true;
+      plugins = with pkgs; [
+        { name = "hydro"; src = fishPlugins.hydro.src; }
+        { name = "pisces"; src = fishPlugins.pisces.src; }
+      ];
       shellInit = "set -gx EDITOR hx";
     };
   
