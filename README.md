@@ -1,3 +1,6 @@
 # Hari Amoor's Nix Config
 
-Not very impressive, but here it is
+```bash
+# As root
+nixos-rebuild switch --flake "github:hariamoor-mlabs/nix-config#"
+```
