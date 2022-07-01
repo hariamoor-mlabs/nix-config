@@ -48,7 +48,7 @@
     redshift = {
       enable = true;
       temperature = {
-        day = 2500;
+        day = 1000;
         night = 1000;
       };
     };
